@@ -1,23 +1,23 @@
 :root {
   --primary: #D4A853;
   --primary-dark: #B8912E;
-  --primary-light: #F5E6C8;
+  --primary-light: #3D3422;
   --accent: #E85D3A;
   --accent-dark: #C44B2B;
-  --bg-dark: #1A1A2E;
-  --bg-card: #FFFFFF;
-  --bg-page: #F8F5F0;
-  --bg-warm: #FFF9F0;
-  --text-primary: #2D2D2D;
-  --text-secondary: #6B6B6B;
-  --text-light: #999999;
+  --bg-dark: #0D0D14;
+  --bg-card: #1E1E2A;
+  --bg-page: #141420;
+  --bg-warm: #1A1A28;
+  --text-primary: #F0EDE8;
+  --text-secondary: #A8A3A0;
+  --text-light: #6B6767;
   --text-white: #FFFFFF;
-  --border: #E8E0D8;
-  --border-light: #F0EBE5;
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
-  --shadow-lg: 0 8px 32px rgba(0,0,0,0.15);
-  --shadow-xl: 0 12px 48px rgba(0,0,0,0.2);
+  --border: #2E2E3E;
+  --border-light: #252535;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.2);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.3);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.4);
+  --shadow-xl: 0 12px 48px rgba(0,0,0,0.5);
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
@@ -132,7 +132,7 @@ body {
   display: flex; align-items: center; gap: 6px;
   padding: 8px 16px;
   border: 1px solid var(--border); border-radius: 50px;
-  background: white; color: var(--text-secondary);
+  background: var(--bg-card); color: var(--text-secondary);
   font-family: 'Poppins', sans-serif;
   font-size: 0.85rem; font-weight: 500;
   cursor: pointer; transition: var(--transition);
@@ -147,7 +147,7 @@ body {
 .menu-grid-empty { text-align: center; padding: 60px 20px; color: var(--text-light); }
 
 .menu-card {
-  background: white; border-radius: var(--radius-lg); overflow: hidden;
+  background: var(--bg-card); border-radius: var(--radius-lg); overflow: hidden;
   box-shadow: var(--shadow-sm); cursor: pointer; transition: var(--transition);
   border: 1px solid var(--border-light);
 }
@@ -196,7 +196,7 @@ body {
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 .modal-content {
-  background: white;
+  background: var(--bg-card);
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   max-height: 90vh; width: 100%; max-width: 600px;
   overflow-y: auto; animation: slideUp 0.3s ease; position: relative;
@@ -285,7 +285,7 @@ body {
 .cart-panel {
   position: fixed; top: 0; right: -420px;
   width: 400px; max-width: 90vw; height: 100vh;
-  background: white; z-index: 301;
+  background: var(--bg-card); z-index: 301;
   display: flex; flex-direction: column;
   transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: var(--shadow-xl);
@@ -298,10 +298,11 @@ body {
 
 .cart-close {
   width: 36px; height: 36px; border-radius: 50%;
-  border: 1px solid var(--border); background: white;
+  border: 1px solid var(--border); background: var(--bg-card);
   font-size: 1rem; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   transition: var(--transition);
+  color: var(--text-primary);
 }
 
 .cart-close:hover { background: var(--bg-page); }
@@ -354,7 +355,7 @@ body {
 .checkout-type-icon { font-size: 1.5rem; }
 .checkout-type-label { font-size: 1rem; font-weight: 600; color: var(--primary-dark); }
 
-.checkout-section { background: white; border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-light); box-shadow: var(--shadow-sm); }
+.checkout-section { background: var(--bg-card); border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-light); box-shadow: var(--shadow-sm); }
 .checkout-section h3 { font-size: 1rem; font-weight: 600; margin-bottom: 16px; color: var(--text-primary); }
 
 .time-options { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -379,7 +380,7 @@ body {
   width: 100%; padding: 12px 14px;
   border: 1px solid var(--border); border-radius: var(--radius-sm);
   font-family: 'Poppins', sans-serif; font-size: 0.9rem;
-  transition: var(--transition); color: var(--text-primary); background: white;
+  transition: var(--transition); color: var(--text-primary); background: var(--bg-warm);
 }
 
 .form-field input:focus, .form-field textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(212, 168, 83, 0.1); }
@@ -389,14 +390,14 @@ body {
 .field-error { position: absolute; bottom: -18px; left: 0; font-size: 0.72rem; color: var(--accent); font-weight: 500; }
 
 .payment-badges { display: flex; gap: 8px; margin-bottom: 14px; }
-.payment-badge { padding: 4px 10px; background: var(--bg-page); border: 1px solid var(--border); border-radius: 4px; font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); }
+.payment-badge { padding: 4px 10px; background: var(--bg-warm); border: 1px solid var(--border); border-radius: 4px; font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); }
 
 .tip-options { display: flex; flex-wrap: wrap; gap: 8px; }
 
 .tip-btn {
   display: flex; flex-direction: column; align-items: center;
   padding: 10px 14px; border: 1px solid var(--border);
-  border-radius: var(--radius-sm); background: white;
+  border-radius: var(--radius-sm); background: var(--bg-warm);
   cursor: pointer; transition: var(--transition);
   font-family: 'Poppins', sans-serif; font-size: 0.95rem; font-weight: 600;
   color: var(--text-primary); min-width: 70px;
@@ -428,7 +429,7 @@ body {
 .confirmation-page { max-width: 540px; margin: 0 auto; padding: 30px 16px 40px; }
 
 .confirmation-card {
-  background: white; border-radius: var(--radius-xl);
+  background: var(--bg-card); border-radius: var(--radius-xl);
   padding: 32px 24px; box-shadow: var(--shadow-md);
   border: 1px solid var(--border-light); text-align: center;
 }
